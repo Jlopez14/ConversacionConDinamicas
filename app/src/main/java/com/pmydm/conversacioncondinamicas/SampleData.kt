@@ -20,56 +20,56 @@ object SampleData {
             -El codo""".trim()
         ),
         Message1(
-            "",
-            """Bro si estas muerto""".trim()
+            "Jose",
+            """Bro pues tienes que ir al médico""".trim()
         ),
         Message1(
             "Michael",
-            """Tio no te pases con el chaval.
-            |It's so much fun!""".trim()
+            """Tio no te pases con el chaval""".trim()
         ),
         Message1(
             "Kobe",
-            "Searching for alternatives to XML layouts..."
+            "Bro esque he entrenado mucho"
         ),
         Message1(
             "Michael",
-            """Hey, take a look at Jetpack Compose, it's great!
-            |It's the Android's modern toolkit for building native UI.
-            |It simplifies and accelerates UI development on Android.
-            |Less code, powerful tools, and intuitive Kotlin APIs :)""".trim()
+            """Además Jose cuantos anillos tienes? porque yo tengo 6
+                |Kobe tiene 5 y tu cuantos tienes?""".trimMargin().trim()
+        ),
+        Message1(
+            "Jose",
+            "Yo no tengo ninguno la verdad." +
+                    "Estoy jugando en la liga provincial de cordoba" +
+                    "porque soy un poco malo"
+        ),
+        Message1(
+            "Michael",
+            "Ya lo sabemos pero te daremos unas clases cuando quieras"
+        ),
+        Message1(
+            "Jose",
+            "Por mi genial, cuando quereis que juguemos?"
         ),
         Message1(
             "Kobe",
-            "It's available from API 21+ :)"
+            "A mi me viene bien el sabado, tu como lo tienes michael? ^_^"
         ),
         Message1(
             "Michael",
-            "Writing Kotlin for UI seems so natural, Compose where have you been all my life?"
+            "Pues tengo que ir en mi avión privado a londres"
+
+        ),
+        Message1(
+            "Jose",
+            "No puedes recogerme?"
         ),
         Message1(
             "Kobe",
-            "Android Studio next version's name is Arctic Fox"
+            "Y a mi?"
         ),
         Message1(
             "Michael",
-            "Android Studio Arctic Fox tooling for Compose is top notch ^_^"
-        ),
-        Message1(
-            "Kobe",
-            "I didn't know you can now run the emulator directly from Android Studio"
-        ),
-        Message1(
-            "Michael",
-            "Compose Previews are great to check quickly how a composable layout looks like"
-        ),
-        Message1(
-            "Kobe",
-            "Previews are also interactive after enabling the experimental setting"
-        ),
-        Message1(
-            "Michael",
-            "Have you tried writing build.gradle with KTS?"
+            "Vale os recojo a los dos pero no no tardeis"
         ),
     )
 }

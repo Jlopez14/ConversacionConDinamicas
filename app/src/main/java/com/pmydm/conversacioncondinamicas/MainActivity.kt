@@ -7,12 +7,16 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -43,10 +47,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             ConversacionConDinamicasTheme {
                 // A surface container using the 'background' color from the theme
+
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
+
                 ) {
+                    Image(painter = painterResource(R.drawable.baloncestofondo),
+                       contentDescription = "ImagenPerfil",
+                        contentScale = ContentScale.FillBounds
+                 )
                     Column {
                         Conversation(SampleData.conversationSample)
 
@@ -56,6 +66,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+
 
 //Creamos la clase Message con sus variables
 data class Message1( val author:String, val body: String)
@@ -70,6 +82,7 @@ fun Conversation(messages: List<Message1>){
     }
 }
 
+
 //Primera funcion del mensaje
 @Composable
 fun Messagecard1(msg:Message1) {
@@ -78,7 +91,7 @@ fun Messagecard1(msg:Message1) {
             Spacer(modifier = Modifier.size(8.dp))
             Row {
                 Image(
-                    painter = painterResource(R.drawable.jordan),
+                    painter = painterResource(R.drawable.baloncestofondo),
                     contentDescription = "ImagenPerfil",
                     contentScale = ContentScale.FillBounds,
                     modifier = Modifier
@@ -108,7 +121,7 @@ fun Messagecard1(msg:Message1) {
                         .padding(5.dp)
                         .clickable { isExpanded = !isExpanded }) {
                         Text(
-                            msg.author
+                            msg.author,color = MaterialTheme.colorScheme.primary
                         )
                         Text(
                             msg.body, maxLines = if (isExpanded) Int.MAX_VALUE else 1
@@ -150,7 +163,7 @@ fun Messagecard1(msg:Message1) {
                         .padding(5.dp)
                         .clickable { isExpanded = !isExpanded }) {
                         Text(
-                            msg.author
+                            msg.author,color = MaterialTheme.colorScheme.secondary
                         )
                         Text(
                             msg.body,maxLines = if (isExpanded) Int.MAX_VALUE else 1
@@ -163,24 +176,27 @@ fun Messagecard1(msg:Message1) {
     else{
         Column {
             Spacer(modifier = Modifier.size(8.dp))
-            Row {
+            Row(modifier= Modifier
+                .padding(10.dp)
+                .fillMaxWidth(),horizontalArrangement = Arrangement.End) {
 
                 var isExpanded by remember { mutableStateOf(false) }
                 val surfaceColor by animateColorAsState(if(isExpanded)MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface)
 
-                Surface(color= Color.LightGray,
+                Surface(color= Color.Gray,
                     border = BorderStroke(1.dp,
-                        color = MaterialTheme.colorScheme.secondary),
+                        color = MaterialTheme.colorScheme.tertiary),
                     shape = MaterialTheme.shapes.medium,
                     modifier = Modifier
                         .animateContentSize()
-                        .padding(1.dp)  )
+                        .padding(1.dp)
+                )
                 {
                     Column(modifier= Modifier
                         .padding(5.dp)
                         .clickable { isExpanded = !isExpanded }) {
                         Text(
-                            msg.author
+                            msg.author,color = MaterialTheme.colorScheme.tertiary
                         )
                         Text(
                             msg.body,maxLines = if (isExpanded) Int.MAX_VALUE else 1
@@ -191,7 +207,6 @@ fun Messagecard1(msg:Message1) {
         }
     }
 }
-
 
 @Preview(showBackground = false)
 @Composable
